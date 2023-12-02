@@ -1,21 +1,5 @@
 
-// let count = JSON.parse(localStorage.getItem("countItems"));
-// if (count == null || count == 0) {
-//     count = 0;
-// }
-// let toDoList = JSON.parse(localStorage.getItem("todoItems"));
-
-// if (toDoList !== null) {
-//     console.log(toDoList);
-//     toDoList.forEach(element => {
-//         presentTask(element.name, element.dueDate, element.dueTime, element.taskId, element.isFinished);
-
-//     });
-//     // renderTodoList();
-// }
-// else {
 toDoList = [];
-//}
 
 function emptyList() {
     document.querySelector('.js-todo-list').innerHTML = '';
@@ -49,7 +33,6 @@ function addToDo() {
     inputElement.value = "";
     dateInputElem.value = "";
     timeInputElem.value = "";
-    // console.log(taskId);
 
     toDoList.push({
         name: name,
@@ -57,27 +40,13 @@ function addToDo() {
         dueTime: dueTime,
         isFinished: false
     });
-    // console.log(taskId);
     presentTask(name, dueDate, dueTime);
-
-
-
-
-
-    // localStorage.setItem('countItems', JSON.stringify(count));
-    // localStorage.setItem('todoItems', JSON.stringify(toDoList));
-    // console.log(toDoList);
-    // renderTodoList(toDoList);
 }
 
 
 function markFinished(checkbox, taskId) {
     // console.log('array', arr);
     var listItem = checkbox.parentElement.parentElement.parentElement;
-    // console.log(checkbox);
-    // console.log(checkbox.parentElement);
-    // console.log(checkbox.parentElement.parentElement);
-    // console.log(listItem);
     var taskText = listItem.querySelector('.text-container span');
     var dueInfo = listItem.querySelector('.due-info');
     var dueTime = listItem.querySelector('.due-time');
